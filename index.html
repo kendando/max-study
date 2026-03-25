@@ -1193,11 +1193,20 @@
 </button>
 
 <script>
-function jumpToToday() {
+function getActiveDate() {
+  var params = new URLSearchParams(window.location.search);
+  var dateParam = params.get('date');
+  if (dateParam) {
+    var d = new Date(dateParam + 'T00:00:00');
+    if (!isNaN(d)) return d;
+  }
   var today = new Date();
   today.setHours(0,0,0,0);
+  return today;
+}
 
-  // Find the most specific match: p3-cards first, then week rows, then page sections
+function jumpToToday() {
+  var today = getActiveDate();
   var targets = document.querySelectorAll('[data-start][data-end]');
   var best = null;
   var bestSpan = Infinity;
@@ -1215,7 +1224,6 @@ function jumpToToday() {
     }
   }
 
-  // If today is before the plan starts, jump to the first section
   if (!best) {
     var planStart = new Date('2026-03-23T00:00:00');
     var planEnd = new Date('2026-05-21T23:59:59');
@@ -1227,24 +1235,25 @@ function jumpToToday() {
   }
 
   if (best) {
-    // Clear any previous highlights
     var prev = document.querySelector('.current-highlight');
     if (prev) prev.classList.remove('current-highlight');
-
     best.classList.add('current-highlight');
     best.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 }
 
-// Set the subtitle on the button showing what week/phase we're in
+// Update button label and auto-scroll if ?date= is set
 (function() {
-  var today = new Date();
-  today.setHours(0,0,0,0);
+  var today = getActiveDate();
   var planStart = new Date('2026-03-23T00:00:00');
   var planEnd = new Date('2026-05-21T23:59:59');
   var label = document.getElementById('jump-label');
+  var params = new URLSearchParams(window.location.search);
 
-  if (today < planStart) {
+  if (params.get('date')) {
+    label.textContent = 'Simulating: ' + params.get('date');
+    jumpToToday();
+  } else if (today < planStart) {
     var days = Math.ceil((planStart - today) / 86400000);
     label.textContent = days + ' day' + (days !== 1 ? 's' : '') + ' until start';
   } else if (today > planEnd) {
