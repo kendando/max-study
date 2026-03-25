@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Higher Exam Study Plan 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Fraunces:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080810;
+    --surface: #10101c;
+    --surface2: #18182a;
+    --border: #252538;
+    --text: #ddddf0;
+    --text-dim: #6060a0;
+    --en: #ff6b9d;
+    --ma: #4a9eff;
+    --hi: #e8c84a;
+    --cs: #6bffb8;
+    --ph: #ff8c42;
+    --ex: #c084fc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(rgba(100,100,200,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(100,100,200,0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none; z-index: 0;
+  }
+
+  .wrap {
+    max-width: 1080px; margin: 0 auto;
+    padding: 64px 24px 80px;
+    position: relative; z-index: 1;
+  }
+
+  /* HEADER */
+  .hdr { margin-bottom: 72px; animation: up 0.7s ease both; }
+  .eyebrow {
+    font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--hi); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before { content:''; width:36px; height:1px; background:var(--hi); }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 11vw, 116px);
+    line-height: 0.88; letter-spacing: 0.02em; margin-bottom: 18px;
+  }
+  h1 em { color: var(--hi); font-style: normal; display: block; }
+  .sub { font-size: 12px; color: var(--text-dim); line-height: 1.9; max-width: 540px; }
+
+  /* LEGEND */
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 72px; animation: up 0.7s 0.1s ease both;
+  }
+  .leg {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 8px 14px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .leg-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  /* DAILY RHYTHM BANNER */
+  .rhythm {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--ex);
+    padding: 24px 28px; margin-bottom: 72px;
+    animation: up 0.7s 0.15s ease both;
+  }
+  .rhythm-title {
+    font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ex); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .rhythm-title::before { content: '◈'; }
+  .rhythm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .rhythm-item {}
+  .rhythm-item-lbl {
+    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--text-dim); margin-bottom: 5px;
+  }
+  .rhythm-item-val {
+    font-size: 12px; color: var(--text); line-height: 1.7;
+  }
+  .rhythm-item-val span { color: var(--ex); }
+
+  /* SECTION TITLE */
+  .sec-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px; letter-spacing: 0.1em; color: var(--text-dim);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .sec-title::after { content:''; flex:1; height:1px; background:var(--border); }
+
+  /* EXAM CARDS */
+  .exam-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(188px, 1fr));
+    gap: 10px; margin-bottom: 72px;
+    animation: up 0.7s 0.2s ease both;
+  }
+  .ec {
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 18px 18px 28px; position: relative; overflow: hidden;
+    transition: transform 0.18s, border-color 0.18s;
+  }
+  .ec:hover { transform: translateY(-4px); border-color: var(--c); }
+  .ec::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:var(--c); }
+  .ec::after {
+    content: attr(data-p); position:absolute; bottom:10px; right:12px;
+    font-size: 9px; letter-spacing: 0.15em; color: var(--text-dim); text-transform:uppercase;
+  }
+  .ec-name { font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--c); margin-bottom:6px; }
+  .ec-date { font-size:10px; color:var(--text-dim); margin-bottom:3px; }
+  .ec-time { font-size:12px; color:var(--text); font-weight:500; }
+
+  /* PHASE */
+  .phase { margin-bottom: 64px; animation: up 0.7s 0.3s ease both; }
+  .phase-hdr { display: flex; align-items: stretch; margin-bottom: 20px; }
+  .phase-n {
+    font-family: 'Bebas Neue', sans-serif; font-size: 72px; line-height:1;
+    color: var(--pc); opacity: 0.12; width: 72px; flex-shrink:0;
+    display: flex; align-items: center;
+  }
+  .phase-info { border-left: 2px solid var(--pc); padding: 14px 20px; flex:1; }
+  .phase-lbl { font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:var(--pc); margin-bottom:3px; }
+  .phase-ttl { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:0.05em; margin-bottom:2px; }
+  .phase-dates { font-size:10px; color:var(--text-dim); letter-spacing:0.08em; }
+  .phase-desc { font-size:12px; color:var(--text-dim); line-height:1.9; margin-bottom:16px; }
+
+  /* EXERCISE NOTE */
+  .ex-note {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--ex);
+    padding: 12px 16px; margin-bottom: 20px;
+    font-size: 11px; color: var(--text-dim); line-height: 1.8;
+  }
+  .ex-note-lbl {
+    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ex); margin-bottom: 6px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .ex-note-lbl::before { content: '◈'; }
+
+  /* TABLES */
+  .wtbl { width:100%; border-collapse:collapse; font-size:12px; margin-bottom:20px; }
+  .wtbl th {
+    text-align:left; padding:9px 14px;
+    background:var(--surface2); border-bottom:1px solid var(--border);
+    font-size:9px; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--text-dim); font-weight:400;
+  }
+  .wtbl td { padding:13px 14px; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.7; }
+  .wtbl tr:hover td { background: var(--surface); }
+  .wlbl { color:var(--text-dim); font-size:10px; white-space:nowrap; }
+  .ex-cell { color: var(--ex); font-size: 11px; }
+
+  .pill {
+    display:inline-block; padding:2px 7px;
+    font-size:9px; letter-spacing:0.1em; text-transform:uppercase;
+    border-radius:2px; font-weight:500; margin-right:3px; margin-bottom:2px;
+  }
+
+  /* PHASE 3 CARDS */
+  .p3-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap:10px;
+  }
+  .p3-card {
+    background: var(--surface); border:1px solid var(--border);
+    border-top: 2px solid var(--c, var(--border));
+    padding:18px; position:relative;
+  }
+  .p3-card.milestone { background: var(--surface2); opacity: 0.8; }
+  .p3-card.rest-day { background: var(--surface); opacity: 0.6; border-top: 2px solid var(--border); }
+  .p3-card.buffer-day { background: var(--surface2); border-top: 2px dashed var(--hi); }
+  .p3-period {
+    font-size:9px; letter-spacing:0.2em; text-transform:uppercase;
+    color: var(--c, var(--text-dim)); margin-bottom:6px;
+  }
+  .p3-action { font-size:13px; color:var(--text); font-weight:500; margin-bottom:8px; }
+  .p3-main { font-size:11px; color:var(--text); line-height:1.75; margin-bottom:8px; }
+  .p3-side {
+    font-size:11px; color:var(--text-dim); line-height:1.75;
+    border-top: 1px solid var(--border); padding-top: 8px; margin-top: 4px;
+  }
+  .p3-side-lbl {
+    font-size:9px; letter-spacing:0.15em; text-transform:uppercase;
+    color: var(--text-dim); margin-bottom:4px;
+  }
+  .p3-ex {
+    font-size:11px; color:var(--ex); line-height:1.75;
+    border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px;
+  }
+  .p3-ex-lbl {
+    font-size:9px; letter-spacing:0.15em; text-transform:uppercase;
+    color: var(--ex); opacity: 0.7; margin-bottom:4px;
+  }
+  .p3-done-badge {
+    position:absolute; top:12px; right:12px;
+    font-size:9px; letter-spacing:0.1em; text-transform:uppercase;
+    color: var(--c); border: 1px solid var(--c);
+    padding: 2px 6px; opacity:0.7;
+  }
+  .rest-badge {
+    position:absolute; top:12px; right:12px;
+    font-size:9px; letter-spacing:0.1em; text-transform:uppercase;
+    color: var(--text-dim); border: 1px solid var(--border);
+    padding: 2px 6px; opacity:0.7;
+  }
+
+  /* TIPS */
+  .tips-wrap {
+    background:var(--surface); border:1px solid var(--border);
+    padding:28px; margin-top:60px; position:relative; overflow:hidden;
+    animation: up 0.7s 0.4s ease both;
+  }
+  .tips-wrap::after {
+    content:'TIPS'; position:absolute; right:-8px; top:-16px;
+    font-family:'Bebas Neue',sans-serif; font-size:110px;
+    color:var(--hi); opacity:0.04; pointer-events:none; user-select:none;
+  }
+  .tips-grid {
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(190px, 1fr));
+    gap:18px; margin-top:18px;
+  }
+  .tip { display:flex; gap:10px; align-items:flex-start; }
+  .tip-ico { color:var(--hi); font-size:14px; flex-shrink:0; margin-top:1px; }
+  .tip strong { display:block; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px; font-weight:500; }
+  .tip span { font-size:11px; color:var(--text-dim); line-height:1.7; }
+
+  /* FOOTER */
+  .ftr {
+    text-align:center; margin-top:72px; padding-top:36px;
+    border-top:1px solid var(--border);
+    animation: up 0.7s 0.5s ease both;
+  }
+  .ftr p {
+    font-family:'Fraunces',serif; font-style:italic; font-weight:300;
+    font-size:20px; color:var(--text-dim);
+  }
+  .ftr p span { color:var(--hi); }
+
+  @keyframes up {
+    from { opacity:0; transform:translateY(22px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  ::-webkit-scrollbar { width:4px; }
+  ::-webkit-scrollbar-track { background:var(--bg); }
+  ::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+
+  @media (max-width:580px) { .phase-n { display:none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="hdr">
+    <div class="eyebrow">SQA Higher Examinations · 2026</div>
+    <h1>Study<em>Plan.</em></h1>
+    <p class="sub">8 weeks · 5 subjects. School week, Easter holidays, back for a week, then study leave into exams. Every subject properly covered, English given a full pre-exam runway, Physics woven through the gaps — and exercise built in throughout.</p>
+  </header>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="leg"><div class="leg-dot" style="background:var(--en)"></div>English</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--ma)"></div>Mathematics</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--hi)"></div>History</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--cs)"></div>Computing Science</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--ph)"></div>Physics</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--ex)"></div>Exercise</div>
+  </div>
+
+  <!-- DAILY RHYTHM -->
+  <div class="rhythm">
+    <div class="rhythm-title">Daily Rhythm</div>
+    <div class="rhythm-grid">
+      <div class="rhythm-item">
+        <div class="rhythm-item-lbl">Full study days (holidays + study leave)</div>
+        <div class="rhythm-item-val">09:00 – 11:00 morning session<br>12:00 – 14:00 afternoon session<br><span>10 mins stick &amp; ball</span> in the midday break</div>
+      </div>
+      <div class="rhythm-item">
+        <div class="rhythm-item-lbl">School days</div>
+        <div class="rhythm-item-val">16:30 – 18:30 evening session<br>One subject per evening — focused, no switching</div>
+      </div>
+      <div class="rhythm-item">
+        <div class="rhythm-item-lbl">Saturday</div>
+        <div class="rhythm-item-val">Full study day — same as holidays.<br>09:00 – 11:00 + 12:00 – 14:00</div>
+      </div>
+      <div class="rhythm-item">
+        <div class="rhythm-item-lbl">Evening run — every day except Sunday</div>
+        <div class="rhythm-item-val"><span>5km run</span> after study. Natural end to the day, clears the head, helps sleep.</div>
+      </div>
+      <div class="rhythm-item">
+        <div class="rhythm-item-lbl">Sunday</div>
+        <div class="rhythm-item-val">Full rest — no study, no structured exercise. A gentle walk is fine.</div>
+      </div>
+      <div class="rhythm-item">
+        <div class="rhythm-item-lbl">Night before each exam</div>
+        <div class="rhythm-item-val"><span>5km run as normal</span> — a familiar routine helps sleep. Light notes review only. Early night.</div>
+      </div>
+      <div class="rhythm-item">
+        <div class="rhythm-item-lbl">Exam days</div>
+        <div class="rhythm-item-val">Short <span>3km easy jog</span> in the evening only — keep the routine, reduce the volume.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXAM SCHEDULE -->
+  <div class="sec-title">Exam Schedule</div>
+  <div class="exam-grid">
+    <div class="ec" style="--c:var(--en)" data-p="Paper 1"><div class="ec-name">English</div><div class="ec-date">Fri 1 May 2026</div><div class="ec-time">09:00 – 10:30</div></div>
+    <div class="ec" style="--c:var(--en)" data-p="Paper 2"><div class="ec-name">English</div><div class="ec-date">Fri 1 May 2026</div><div class="ec-time">11:00 – 12:45</div></div>
+    <div class="ec" style="--c:var(--ma)" data-p="Paper 1"><div class="ec-name">Mathematics</div><div class="ec-date">Thu 7 May 2026</div><div class="ec-time">09:00 – 10:15</div></div>
+    <div class="ec" style="--c:var(--ma)" data-p="Paper 2"><div class="ec-name">Mathematics</div><div class="ec-date">Thu 7 May 2026</div><div class="ec-time">10:45 – 12:15</div></div>
+    <div class="ec" style="--c:var(--hi)" data-p="Paper 1"><div class="ec-name">History</div><div class="ec-date">Thu 14 May 2026</div><div class="ec-time">09:00 – 10:30</div></div>
+    <div class="ec" style="--c:var(--hi)" data-p="Paper 2"><div class="ec-name">History</div><div class="ec-date">Thu 14 May 2026</div><div class="ec-time">11:00 – 12:30</div></div>
+    <div class="ec" style="--c:var(--cs)" data-p="Paper 1"><div class="ec-name">Computing</div><div class="ec-date">Wed 20 May 2026</div><div class="ec-time">09:00 – 11:00</div></div>
+    <div class="ec" style="--c:var(--ph)" data-p="Paper 1"><div class="ec-name">Physics</div><div class="ec-date">Thu 21 May 2026</div><div class="ec-time">09:00 – 09:45</div></div>
+    <div class="ec" style="--c:var(--ph)" data-p="Paper 2"><div class="ec-name">Physics</div><div class="ec-date">Thu 21 May 2026</div><div class="ec-time">10:15 – 12:30</div></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- PHASE 1 -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="sec-title">Phase One</div>
+  <div class="phase">
+    <div class="phase-hdr">
+      <div class="phase-n" style="--pc:var(--cs)">1</div>
+      <div class="phase-info" style="--pc:var(--cs)">
+        <div class="phase-lbl">Foundation</div>
+        <div class="phase-ttl">Content Consolidation</div>
+        <div class="phase-dates">23 March – 11 April 2026 · 3 weeks · All 5 subjects every week</div>
+      </div>
+    </div>
+    <p class="phase-desc">All 5 subjects every week. Week 1 is a school week — evenings only (2 hrs) + full Saturday. Weeks 2–3 are Easter holidays — full study days (4 hrs). 5km run every evening Mon–Sat. Sunday off entirely.</p>
+
+    <div class="ex-note">
+      <div class="ex-note-lbl">Exercise this phase</div>
+      <strong style="color:var(--text)">5km run</strong> — every evening Mon–Sat. Acts as a hard stop to the study day.<br>
+      <strong style="color:var(--text)">Stick &amp; ball</strong> — 10 mins during the midday Pomodoro break on holiday days. No planning needed, just grab the stick.<br>
+      <strong style="color:var(--text)">Sunday</strong> — complete rest. No study, no running. A walk is fine if he wants to move.
+    </div>
+
+    <table class="wtbl">
+      <thead>
+        <tr><th>Week</th><th>Morning</th><th>Afternoon / Evening</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="wlbl">Wk 1<br>23–28 Mar<br><span style="color:var(--hi);font-size:9px">SCHOOL</span></td>
+          <td style="color:var(--text-dim); font-size:11px;">At school Mon–Fri</td>
+          <td>
+            <span style="font-size:10px;color:var(--text-dim)">Mon–Fri evenings (2 hrs) — one subject per night:</span><br>
+            <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span>
+            <span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span>
+            <span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span>
+            <span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span>
+            <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span><br>
+            <span style="font-size:10px;color:var(--text-dim)">Saturday — full day:</span><br>
+            <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span>
+            <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="wlbl">Wk 2<br>30 Mar–4 Apr<br><span style="color:var(--cs);font-size:9px">EASTER</span></td>
+          <td>
+            <span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span>
+            <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span>
+          </td>
+          <td>
+            <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span>
+            <span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span>
+            <span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="wlbl">Wk 3<br>6–11 Apr<br><span style="color:var(--cs);font-size:9px">EASTER</span></td>
+          <td>
+            <span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span>
+            <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span>
+          </td>
+          <td>
+            <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span>
+            <span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span>
+            <span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- TRANSITION WEEK -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="sec-title">Back at School</div>
+  <div class="phase">
+    <div class="phase-hdr">
+      <div class="phase-n" style="--pc:var(--hi)">→</div>
+      <div class="phase-info" style="--pc:var(--hi)">
+        <div class="phase-lbl">Transition</div>
+        <div class="phase-ttl">Maintenance Week</div>
+        <div class="phase-dates">13 – 17 April 2026 · Back at school · Evenings only · Study leave starts the following week</div>
+      </div>
+    </div>
+    <p class="phase-desc">Back in school for a week before study leave. No full-day study possible — evenings only (2 hrs). Keep all 5 subjects ticking with notes review and light revision. Saturday 18 April is the first full simulation day. This week is also a natural buffer — if anything slipped during Easter, catch up here.</p>
+
+    <div class="ex-note">
+      <div class="ex-note-lbl">Exercise this week</div>
+      <strong style="color:var(--text)">5km run</strong> — every evening after study as normal.<br>
+      <strong style="color:var(--text)">Sunday 12 Apr</strong> — full rest day, no study, no running.
+    </div>
+
+    <table class="wtbl">
+      <thead>
+        <tr><th>Day</th><th>Evening (2 hrs after school)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="wlbl">Mon 13 Apr</td>
+          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Notes review + light revision</td>
+        </tr>
+        <tr>
+          <td class="wlbl">Tue 14 Apr</td>
+          <td><span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span> Notes review + light revision</td>
+        </tr>
+        <tr>
+          <td class="wlbl">Wed 15 Apr</td>
+          <td><span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> Notes review + light revision</td>
+        </tr>
+        <tr>
+          <td class="wlbl">Thu 16 Apr</td>
+          <td><span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span> Notes review + light revision</td>
+        </tr>
+        <tr>
+          <td class="wlbl">Fri 17 Apr</td>
+          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span> Notes review + light revision</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- PHASE 2 -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="sec-title">Phase Two</div>
+  <div class="phase">
+    <div class="phase-hdr">
+      <div class="phase-n" style="--pc:var(--ma)">2</div>
+      <div class="phase-info" style="--pc:var(--ma)">
+        <div class="phase-lbl">Past Papers</div>
+        <div class="phase-ttl">Full Exam Simulation</div>
+        <div class="phase-dates">18 – 24 April 2026 · Study leave begins · All 5 subjects simulated by 24 April</div>
+      </div>
+    </div>
+    <p class="phase-desc">Study leave starts. Every subject gets its own timed simulation block, completed by 24 April to leave a clear runway for English before 1 May. Morning = full past paper under exam conditions. Afternoon = mark fully, correct every wrong answer, update notes.</p>
+
+    <div class="ex-note">
+      <div class="ex-note-lbl">Exercise this phase</div>
+      <strong style="color:var(--text)">5km run</strong> — every evening as normal. Especially important during intensive past paper days — it offloads stress and consolidates memory during sleep.<br>
+      <strong style="color:var(--text)">Stick &amp; ball</strong> — midday break as usual. Keeps it consistent, no disruption to the study rhythm.<br>
+      <strong style="color:var(--text)">Sunday 19 Apr</strong> — full rest day, no study, no running.
+    </div>
+
+    <table class="wtbl">
+      <thead>
+        <tr><th>Period</th><th>Morning — full timed past paper</th><th>Afternoon — mark, correct, update notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="wlbl">18 Apr · Sat</td>
+          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> P1 + P2 timed back-to-back</td>
+          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Mark both papers fully</td>
+        </tr>
+        <tr>
+          <td class="wlbl">20 Apr · Mon</td>
+          <td><span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span> P1 (non-calc) + P2 timed</td>
+          <td><span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span> Mark and correct every wrong answer</td>
+        </tr>
+        <tr>
+          <td class="wlbl">21 Apr · Tue</td>
+          <td><span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> Full timed past paper</td>
+          <td><span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> Mark against marking scheme</td>
+        </tr>
+        <tr>
+          <td class="wlbl">22 Apr · Wed</td>
+          <td><span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span> Full timed past paper</td>
+          <td><span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span> Mark section by section</td>
+        </tr>
+        <tr>
+          <td class="wlbl">23 Apr · Thu</td>
+          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span> P1 + P2 timed</td>
+          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span> Mark all working, not just final answers</td>
+        </tr>
+        <tr style="background:var(--surface)">
+          <td class="wlbl">24 Apr · Fri</td>
+          <td colspan="2" style="font-size:11px; color:var(--text-dim);">
+            Targeted weak areas only — no full papers. Focus on the gaps the simulations exposed. If nothing major came up, start the English runway a day early.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- PHASE 2B -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="sec-title">Phase Two B</div>
+  <div class="phase">
+    <div class="phase-hdr">
+      <div class="phase-n" style="--pc:var(--en)">2b</div>
+      <div class="phase-info" style="--pc:var(--en)">
+        <div class="phase-lbl">Pre-Exam Prep</div>
+        <div class="phase-ttl">English Final Runway</div>
+        <div class="phase-dates">25 April – 30 April 2026 · Study leave · English leads · Maths maintained alongside</div>
+      </div>
+    </div>
+    <p class="phase-desc">A dedicated 6-day block before the first exam on 1 May. English is the primary focus. Maths gets light daily maintenance so nothing goes cold before 7 May. No new material for any other subject — notes review only.</p>
+
+    <div class="ex-note">
+      <div class="ex-note-lbl">Exercise this phase</div>
+      <strong style="color:var(--text)">5km run</strong> — every evening including 30 April (night before English). A familiar routine is settling, not risky. Keep the volume exactly the same.<br>
+      <strong style="color:var(--text)">Stick &amp; ball</strong> — midday break as usual, every day.<br>
+      <strong style="color:var(--text)">Sunday 26 Apr</strong> — full rest day. Last proper day off before the exam run begins.
+    </div>
+
+    <table class="wtbl">
+      <thead>
+        <tr><th>Day</th><th>Morning (2.5 hrs)</th><th>Afternoon (2 hrs)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="wlbl">25 Apr · Sat</td>
+          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span></td>
+          <td><span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span> Light review</td>
+        </tr>
+        <tr>
+          <td class="wlbl">26 Apr · Sun</td>
+          <td colspan="2" style="color:var(--text-dim); font-style:italic; font-size:11px;">Full rest day — no study, no running. Last proper day off.</td>
+        </tr>
+        <tr>
+          <td class="wlbl">27 Apr · Mon</td>
+          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span></td>
+          <td><span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span> Light review</td>
+        </tr>
+        <tr>
+          <td class="wlbl">28 Apr · Tue</td>
+          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Full timed past paper</td>
+          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Mark the morning paper fully</td>
+        </tr>
+        <tr>
+          <td class="wlbl">29 Apr · Wed</td>
+          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Weak areas only</td>
+          <td>All subjects — notes review only. No new material.</td>
+        </tr>
+        <tr>
+          <td class="wlbl">30 Apr · Thu</td>
+          <td colspan="2" style="font-size:11px; color:var(--text-dim);">
+            <span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Light notes review only. No timed work. <span style="color:var(--ex)">5km run this evening as normal.</span> Early night. Exam tomorrow at 09:00.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- PHASE 3 -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="sec-title">Phase Three</div>
+  <div class="phase">
+    <div class="phase-hdr">
+      <div class="phase-n" style="--pc:var(--ph)">3</div>
+      <div class="phase-info" style="--pc:var(--ph)">
+        <div class="phase-lbl">Exam Period</div>
+        <div class="phase-ttl">Rolling Preparation</div>
+        <div class="phase-dates">1 May – 21 May 2026 · Study leave · Physics woven throughout · Sundays still off</div>
+      </div>
+    </div>
+    <p class="phase-desc">Each primary subject gets a dedicated morning prep block before its sitting. Physics is woven into every afternoon from 2 May, building over two weeks of side-session preparation rather than one panicked evening. Sundays remain rest days throughout — the routine that got him here is the routine that carries him through.</p>
+
+    <div class="ex-note">
+      <div class="ex-note-lbl">Exercise this phase</div>
+      <strong style="color:var(--text)">5km run</strong> — every evening as normal throughout, including the night before each exam. Routine beats rest for sleep quality.<br>
+      <strong style="color:var(--text)">Exam day evenings</strong> — drop to a <strong style="color:var(--text)">3km easy jog</strong>. Keep the habit, reduce the load.<br>
+      <strong style="color:var(--text)">Stick &amp; ball</strong> — midday break daily. Keep it going right through to the last exam.<br>
+      <strong style="color:var(--text)">Sundays</strong> — full rest as always. No study, no running.<br>
+      <strong style="color:var(--text)">After 21 May</strong> — back to full training. Well earned.
+    </div>
+
+    <div class="p3-grid">
+
+      <div class="p3-card" style="--c:var(--en)">
+        <div class="p3-period">1 May — Exam Day</div>
+        <div class="p3-action">English — P1 + P2</div>
+        <div class="p3-main">Both papers today. After P2 finishes at 12:45 — complete rest from study. No looking at Maths notes.</div>
+        <div class="p3-ex">
+          <div class="p3-ex-lbl">↳ Exercise</div>
+          3km easy jog this evening. Calm, familiar, settling.
+        </div>
+        <div class="p3-done-badge">Exam Day</div>
+      </div>
+
+      <div class="p3-card" style="--c:var(--ma)">
+        <div class="p3-period">2 – 6 May · 4 study days</div>
+        <div class="p3-action">Mathematics — primary prep</div>
+        <div class="p3-main">Morning = Maths past papers under exam conditions. Sunday 3 May is a rest day.</div>
+        <div class="p3-side">
+          <div class="p3-side-lbl">↳ Afternoon side sessions</div>
+          <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span> Side session daily — rotating topics.
+        </div>
+        <div class="p3-ex">
+          <div class="p3-ex-lbl">↳ Exercise</div>
+          5km run every evening. Stick &amp; ball in midday break. Sunday 3 May — full rest.
+        </div>
+      </div>
+
+      <div class="p3-card rest-day">
+        <div class="p3-period" style="color:var(--text-dim)">6 May — Night before Maths</div>
+        <div class="p3-action" style="font-weight:400; color:var(--text-dim)">Light notes review only</div>
+        <div class="p3-main" style="color:var(--text-dim)">No timed work. Same routine as the night before English — light review, 5km run, early night. P1 is non-calculator, so a clear head matters more than extra drilling.</div>
+        <div class="rest-badge">Exam Eve</div>
+      </div>
+
+      <div class="p3-card milestone" style="--c:var(--ma)">
+        <div class="p3-period">7 May — Exam Day</div>
+        <div class="p3-action">Mathematics — P1 + P2</div>
+        <div class="p3-main">Both papers today. After P2 — rest for the remainder of the day. Full rest day on 8 May.</div>
+        <div class="p3-ex">
+          <div class="p3-ex-lbl">↳ Exercise</div>
+          3km easy jog this evening. 8 May — gentle walk only, full rest.
+        </div>
+        <div class="p3-done-badge">Exam Day</div>
+      </div>
+
+      <div class="p3-card" style="--c:var(--hi)">
+        <div class="p3-period">9 – 13 May · 4 study days</div>
+        <div class="p3-action">History — primary prep</div>
+        <div class="p3-main">Morning = History past papers and timed essay practice. Sunday 10 May is a rest day.</div>
+        <div class="p3-side">
+          <div class="p3-side-lbl">↳ Afternoon side sessions</div>
+          <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span> Side session daily.<br>
+          <span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span> Light notes refresh — 30 mins, keep it ticking.
+        </div>
+        <div class="p3-ex">
+          <div class="p3-ex-lbl">↳ Exercise</div>
+          5km run every evening. Sunday 10 May — full rest.
+        </div>
+      </div>
+
+      <div class="p3-card milestone" style="--c:var(--hi)">
+        <div class="p3-period">14 May — Exam Day</div>
+        <div class="p3-action">History — P1 + P2</div>
+        <div class="p3-main">Both papers today. After two exam sittings — rest for the afternoon. No study until tomorrow morning.</div>
+        <div class="p3-ex">
+          <div class="p3-ex-lbl">↳ Exercise</div>
+          3km easy jog this evening. That's it.
+        </div>
+        <div class="p3-done-badge">Exam Day</div>
+      </div>
+
+      <div class="p3-card" style="--c:var(--cs)">
+        <div class="p3-period">15 – 19 May · 4 study days</div>
+        <div class="p3-action">Computing Science — primary prep</div>
+        <div class="p3-main">Morning = Computing past papers and timed practice. Sunday 17 May is a rest day.</div>
+        <div class="p3-side">
+          <div class="p3-side-lbl">↳ Afternoon side sessions</div>
+          <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span> Past paper sections daily — Physics has been building for over two weeks now.
+        </div>
+        <div class="p3-ex">
+          <div class="p3-ex-lbl">↳ Exercise</div>
+          5km run every evening. Sunday 17 May — full rest. Crucial phase — the run is non-negotiable for keeping the head clear.
+        </div>
+      </div>
+
+      <div class="p3-card milestone" style="--c:var(--cs)">
+        <div class="p3-period">20 May — Exam Day AM</div>
+        <div class="p3-action">Computing Science — Paper 1</div>
+        <div class="p3-main">Sit the paper. After it finishes at 11:00 — afternoon is Physics only. Calm notes consolidation. Nothing new. Early night.</div>
+        <div class="p3-ex">
+          <div class="p3-ex-lbl">↳ Exercise</div>
+          5km run this evening — Physics exam is tomorrow, the routine matters most tonight.
+        </div>
+        <div class="p3-done-badge">Exam Day</div>
+      </div>
+
+      <div class="p3-card" style="--c:var(--ph)">
+        <div class="p3-period">21 May — Exam Day</div>
+        <div class="p3-action">Physics — P1 + P2. All done.</div>
+        <div class="p3-main">Both papers back-to-back. P2 ends at 12:30. Physics has had rolling preparation since 2 May — over two weeks of steady side sessions plus a proper consolidation evening. Go in confident.</div>
+        <div class="p3-ex">
+          <div class="p3-ex-lbl">↳ After 12:30</div>
+          Everything is finished. Get outside. Run as far as he wants.
+        </div>
+        <div class="p3-done-badge">Exam Day</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TIPS -->
+  <div class="tips-wrap">
+    <div class="sec-title" style="margin-bottom:4px;">Ground Rules</div>
+    <div class="tips-grid">
+      <div class="tip"><div class="tip-ico">◈</div><div><strong>Pomodoro Always</strong><span>50 mins on, 10 mins off. Stick and ball fits perfectly into a long midday break.</span></div></div>
+      <div class="tip"><div class="tip-ico">◈</div><div><strong>Run Every Evening</strong><span>The 5km is non-negotiable on study days. It clears the day's load and helps sleep.</span></div></div>
+      <div class="tip"><div class="tip-ico">◈</div><div><strong>Mark Every Paper</strong><span>An unmarked past paper is worthless. The correction session is where the actual improvement happens.</span></div></div>
+      <div class="tip"><div class="tip-ico">◈</div><div><strong>Sunday = Off</strong><span>Every single week, including during exams. No study, no structured exercise. Non-negotiable.</span></div></div>
+      <div class="tip"><div class="tip-ico">◈</div><div><strong>Exam Eve Routine</strong><span>Night before every exam: light notes review, 5km run, early night. Same routine every time.</span></div></div>
+      <div class="tip"><div class="tip-ico">◈</div><div><strong>School Weeks Count</strong><span>Evening sessions are shorter but they keep every subject alive. One subject per night, no switching.</span></div></div>
+    </div>
+  </div>
+
+  <div class="ftr">
+    <p>8 weeks. 5 subjects. One shot. <span>Make it count.</span></p>
+  </div>
+
+</div>
+</body>
+</html>
