@@ -612,7 +612,225 @@
       color: var(--text-dim);
     }
   }
+
+  /* DAILY QUOTE */
+  .daily-quote {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    border-left: 3px solid var(--ex);
+    padding: 20px 24px;
+    z-index: 999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: slideDown 0.7s ease both;
+    max-height: 80px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  @keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .daily-quote:hover {
+    border-left-color: var(--hi);
+    background: var(--surface2);
+  }
+
+  .daily-quote.expanded {
+    max-height: 500px;
+  }
+
+  .daily-quote-content {
+    flex: 1;
+  }
+
+  .daily-quote-close {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 16px;
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+  }
+
+  .daily-quote-close:hover {
+    color: var(--text);
+  }
+
+  body {
+    padding-top: 120px;
+  }
+
+  .daily-quote.hidden {
+    display: none;
+    padding-top: 0;
+  }
+
+  .daily-quote-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ex);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .daily-quote-label::before {
+    content: '★';
+  }
+
+  .daily-quote-text {
+    font-size: 16px;
+    color: var(--text);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+
+  .daily-quote-author {
+    font-size: 13px;
+    color: var(--text-dim);
+    text-align: right;
+  }
+
+  .daily-quote-author a {
+    color: var(--hi);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .daily-quote-author a:hover {
+    color: var(--ex);
+    text-decoration: underline;
+  }
+
+  .daily-quote-author::before {
+    content: '— ';
+  }
+
+  .daily-quote-toggle {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .daily-quote-toggle::after {
+    content: '▼';
+    transition: transform 0.3s ease;
+  }
+
+  .daily-quote.expanded .daily-quote-toggle::after {
+    transform: rotate(180deg);
+  }
 </style>
+
+  <script>
+    // Daily inspirational quotes
+    const quotes = [
+      { text: "The only way to do great work is to love what you do.", author: "Steve Jobs", link: "https://en.wikipedia.org/wiki/Steve_Jobs", grokipedia: "https://grokipedia.com/page/Steve_Jobs" },
+      { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill", link: "https://en.wikipedia.org/wiki/Winston_Churchill", grokipedia: "https://grokipedia.com/page/Winston_Churchill" },
+      { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt", link: "https://en.wikipedia.org/wiki/Theodore_Roosevelt", grokipedia: "https://grokipedia.com/page/Theodore_Roosevelt" },
+      { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt", link: "https://en.wikipedia.org/wiki/Eleanor_Roosevelt", grokipedia: "https://grokipedia.com/page/Eleanor_Roosevelt" },
+      { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius", link: "https://en.wikipedia.org/wiki/Confucius", grokipedia: "https://grokipedia.com/page/Confucius" },
+      { text: "Everything you want is on the other side of fear.", author: "Jack Canfield", link: "https://en.wikipedia.org/wiki/Jack_Canfield", grokipedia: "https://grokipedia.com/page/Jack_Canfield" },
+      { text: "Believe in yourself. You are braver than you think, more talented than you know, and capable of more than you imagine.", author: "Roy Bennett", link: "https://www.roybrennettauthor.com", grokipedia: null },
+      { text: "I learned that courage was not the absence of fear, but the triumph over it.", author: "Nelson Mandela", link: "https://en.wikipedia.org/wiki/Nelson_Mandela", grokipedia: "https://grokipedia.com/page/Nelson_Mandela" },
+      { text: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela", link: "https://en.wikipedia.org/wiki/Nelson_Mandela", grokipedia: "https://grokipedia.com/page/Nelson_Mandela" },
+      { text: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky", link: "https://en.wikipedia.org/wiki/Wayne_Gretzky", grokipedia: "https://grokipedia.com/page/Wayne_Gretzky" },
+      { text: "Excellence is not a destination; it is a continuous journey that never ends.", author: "Brian Tracy", link: "https://en.wikipedia.org/wiki/Brian_Tracy", grokipedia: "https://grokipedia.com/page/Brian_Tracy" },
+      { text: "Success is walking from failure to failure with no loss of enthusiasm.", author: "Winston Churchill", link: "https://en.wikipedia.org/wiki/Winston_Churchill", grokipedia: "https://grokipedia.com/page/Winston_Churchill" }
+    ];
+
+    function getQuoteForDay() {
+      // For testing: add ?date=YYYY-MM-DD to URL to test a specific date
+      const params = new URLSearchParams(window.location.search);
+      let today = new Date();
+
+      if (params.has('date')) {
+        today = new Date(params.get('date'));
+      }
+
+      const startDate = new Date(2026, 2, 25); // March 25, 2026
+      const endDate = new Date(2026, 4, 20);  // May 20, 2026 (8 weeks later)
+
+      // Normalize dates to remove time component
+      const todayNormalized = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      const startNormalized = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+      const endNormalized = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
+
+      console.log('Today:', todayNormalized, 'Start:', startNormalized, 'End:', endNormalized);
+
+      // Check if today is within the study period
+      if (todayNormalized < startNormalized || todayNormalized > endNormalized) {
+        return null; // No quote outside study period
+      }
+
+      // Calculate days into the study period
+      const msPerDay = 1000 * 60 * 60 * 24;
+      const daysIntoStudy = Math.floor((todayNormalized - startNormalized) / msPerDay);
+      console.log('Days into study:', daysIntoStudy, 'Quote index:', daysIntoStudy % quotes.length);
+      return quotes[daysIntoStudy % quotes.length];
+    }
+
+    function initDailyQuote() {
+      const quoteElement = document.getElementById('dailyQuote');
+      const closeBtn = document.getElementById('quoteClose');
+
+      const quote = getQuoteForDay();
+
+      // Hide quote if outside study period
+      if (quote === null) {
+        quoteElement.classList.add('hidden');
+        document.body.style.paddingTop = '0';
+        return;
+      }
+
+
+
+      document.getElementById('quoteText').textContent = '"' + quote.text + '"';
+      document.getElementById('quoteLabel').textContent = 'Daily Inspiration — ' + quote.author;
+      let authorHtml = quote.author + ' (<a href="' + quote.link + '" target="_blank" rel="noopener noreferrer">Wikipedia</a>';
+      if (quote.grokipedia) {
+        authorHtml += ' · <a href="' + quote.grokipedia + '" target="_blank" rel="noopener noreferrer">Grokipedia</a>';
+      }
+      authorHtml += ')';
+      document.getElementById('quoteAuthor').innerHTML = authorHtml;
+
+      // Toggle expand/collapse
+      quoteElement.addEventListener('click', function(e) {
+        if (e.target.classList.contains('daily-quote-close')) return;
+        if (e.target.tagName === 'A') return;
+        this.classList.toggle('expanded');
+        const toggle = this.querySelector('.daily-quote-toggle');
+        toggle.textContent = this.classList.contains('expanded') ? 'Click to collapse' : 'Click to expand';
+      });
+
+      // Close button
+      closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        quoteElement.classList.add('hidden');
+        document.body.style.paddingTop = '0';
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', initDailyQuote);
+  </script>
 </head>
 <body>
 <div class="wrap">
@@ -627,6 +845,17 @@
     <h1>Study<em>Plan.</em></h1>
     <p class="sub">8 weeks · 5 subjects. School week, Easter holidays, back for a week, then study leave into exams. Every subject properly covered, English given a full pre-exam runway, Physics woven through the gaps — and exercise built in throughout.</p>
   </header>
+
+  <!-- DAILY INSPIRATIONAL QUOTE -->
+  <div class="daily-quote" id="dailyQuote">
+    <div class="daily-quote-content">
+      <div class="daily-quote-label" id="quoteLabel">Daily Inspiration</div>
+      <div class="daily-quote-text" id="quoteText"></div>
+      <div class="daily-quote-author" id="quoteAuthor"></div>
+      <div class="daily-quote-toggle">Click to expand</div>
+    </div>
+    <button class="daily-quote-close" id="quoteClose">&times;</button>
+  </div>
 
   <!-- LEGEND -->
   <div class="legend">
