@@ -339,6 +339,40 @@
   ::-webkit-scrollbar-track { background:var(--bg); }
   ::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
 
+  /* JUMP TO TODAY BUTTON */
+  .jump-today {
+    position: fixed; bottom: 28px; right: 28px; z-index: 100;
+    background: var(--hi); color: var(--bg);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px; letter-spacing: 0.08em;
+    padding: 12px 22px;
+    border: none; cursor: pointer;
+    box-shadow: 0 4px 24px rgba(232,200,74,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .jump-today:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 32px rgba(232,200,74,0.45);
+  }
+  .jump-today .jump-sub {
+    display: block; font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 0.05em; opacity: 0.7; margin-top: 2px;
+  }
+
+  /* CURRENT HIGHLIGHT */
+  .current-highlight {
+    outline: 2px solid var(--hi);
+    outline-offset: 4px;
+    position: relative;
+  }
+  .current-highlight::after {
+    content: 'YOU ARE HERE';
+    position: absolute; top: -12px; right: 12px;
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    background: var(--hi); color: var(--bg);
+    padding: 2px 8px; font-family: 'DM Mono', monospace; font-weight: 500;
+  }
+
   @media (max-width:580px) { .phase-n { display:none; } }
 
   /* ═══════════════════════════════════════════════════════════ */
@@ -351,6 +385,8 @@
 
   @media print {
     * { animation: none !important; transition: none !important; }
+    .jump-today, .current-highlight::after { display: none !important; }
+    .current-highlight { outline: none !important; }
 
     :root {
       --text: #ffffff;
@@ -681,7 +717,7 @@
   <!-- ══════════════════════════════════════════════ -->
   <!-- PAGE 2: PHASE 1 -->
   <!-- ══════════════════════════════════════════════ -->
-  <div class="page-2">
+  <div class="page-2" data-start="2026-03-23" data-end="2026-04-11">
   <div class="sec-title">Phase One</div>
   <div class="phase">
     <div class="phase-hdr">
@@ -707,7 +743,7 @@
       </thead>
       <tbody>
         <tr>
-          <td class="wlbl">Wk 1<br>23–28 Mar<br><span style="color:var(--hi);font-size:12px">SCHOOL</span></td>
+          <td class="wlbl" data-start="2026-03-23" data-end="2026-03-28">Wk 1<br>23–28 Mar<br><span style="color:var(--hi);font-size:12px">SCHOOL</span></td>
           <td style="color:var(--text-dim); font-size:11px;">At school Mon–Fri</td>
           <td>
             <span style="font-size:13px;color:var(--text-dim)">Mon–Fri evenings (2 hrs) — one subject per night:</span><br>
@@ -722,7 +758,7 @@
           </td>
         </tr>
         <tr>
-          <td class="wlbl">Wk 2<br>30 Mar–4 Apr<br><span style="color:var(--cs);font-size:12px">EASTER</span></td>
+          <td class="wlbl" data-start="2026-03-30" data-end="2026-04-04">Wk 2<br>30 Mar–4 Apr<br><span style="color:var(--cs);font-size:12px">EASTER</span></td>
           <td>
             <span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span>
             <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span>
@@ -734,7 +770,7 @@
           </td>
         </tr>
         <tr>
-          <td class="wlbl">Wk 3<br>6–11 Apr<br><span style="color:var(--cs);font-size:12px">EASTER</span></td>
+          <td class="wlbl" data-start="2026-04-06" data-end="2026-04-11">Wk 3<br>6–11 Apr<br><span style="color:var(--cs);font-size:12px">EASTER</span></td>
           <td>
             <span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span>
             <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span>
@@ -754,7 +790,7 @@
   <!-- ══════════════════════════════════════════════ -->
   <!-- PAGE 3: TRANSITION WEEK -->
   <!-- ══════════════════════════════════════════════ -->
-  <div class="page-3">
+  <div class="page-3" data-start="2026-04-13" data-end="2026-04-17">
   <div class="sec-title">Back at School</div>
   <div class="phase">
     <div class="phase-hdr">
@@ -779,7 +815,7 @@
       </thead>
       <tbody>
         <tr>
-          <td class="wlbl">Mon 13 Apr</td>
+          <td class="wlbl" data-start="2026-04-13" data-end="2026-04-17">Mon 13 Apr</td>
           <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Notes review + light revision</td>
         </tr>
         <tr>
@@ -807,7 +843,7 @@
   <!-- ══════════════════════════════════════════════ -->
   <!-- PAGE 4: PHASE 2 + PHASE 2B -->
   <!-- ══════════════════════════════════════════════ -->
-  <div class="page-4">
+  <div class="page-4" data-start="2026-04-18" data-end="2026-04-24">
   <div class="sec-title">Phase Two</div>
   <div class="phase">
     <div class="phase-hdr">
@@ -833,7 +869,7 @@
       </thead>
       <tbody>
         <tr>
-          <td class="wlbl">18 Apr · Sat</td>
+          <td class="wlbl" data-start="2026-04-18" data-end="2026-04-24">18 Apr · Sat</td>
           <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> P1 + P2 timed back-to-back</td>
           <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Mark both papers fully</td>
         </tr>
@@ -872,7 +908,7 @@
   <!-- ══════════════════════════════════════════════ -->
   <!-- PAGE 5: PHASE 2B -->
   <!-- ══════════════════════════════════════════════ -->
-  <div class="page-5">
+  <div class="page-5" data-start="2026-04-25" data-end="2026-04-30">
   <div class="sec-title">Phase Two B</div>
   <div class="phase">
     <div class="phase-hdr">
@@ -936,7 +972,7 @@
   <!-- ══════════════════════════════════════════════ -->
   <!-- PAGE 6: PHASE 3 -->
   <!-- ══════════════════════════════════════════════ -->
-  <div class="page-6">
+  <div class="page-6" data-start="2026-05-01" data-end="2026-05-08">
   <div class="phase">
     <div class="phase-hdr">
       <div class="phase-n" style="--pc:var(--ph)">3</div>
@@ -959,7 +995,7 @@
 
     <div class="p3-grid">
 
-      <div class="p3-card" style="--c:var(--en)">
+      <div class="p3-card" style="--c:var(--en)" data-start="2026-05-01" data-end="2026-05-01">
         <div class="p3-period">1 May — Exam Day</div>
         <div class="p3-action">English — P1 + P2</div>
         <div class="p3-main">Both papers today. After P2 finishes at 12:45 — complete rest from study. No looking at Maths notes.</div>
@@ -970,7 +1006,7 @@
         <div class="p3-done-badge">Exam Day</div>
       </div>
 
-      <div class="p3-card" style="--c:var(--ma)">
+      <div class="p3-card" style="--c:var(--ma)" data-start="2026-05-02" data-end="2026-05-06">
         <div class="p3-period">2 – 6 May · 4 study days</div>
         <div class="p3-action">Mathematics — primary prep</div>
         <div class="p3-main">Morning = Maths past papers under exam conditions. Sunday 3 May is a rest day.</div>
@@ -984,14 +1020,14 @@
         </div>
       </div>
 
-      <div class="p3-card rest-day">
+      <div class="p3-card rest-day" data-start="2026-05-06" data-end="2026-05-06">
         <div class="p3-period" style="color:var(--text-dim)">6 May — Night before Maths</div>
         <div class="p3-action" style="font-weight:400; color:var(--text-dim)">Light notes review only</div>
         <div class="p3-main" style="color:var(--text-dim)">No timed work. Same routine as the night before English — light review, 5km run, early night. P1 is non-calculator, so a clear head matters more than extra drilling.</div>
         <div class="rest-badge">Exam Eve</div>
       </div>
 
-      <div class="p3-card milestone" style="--c:var(--ma)">
+      <div class="p3-card milestone" style="--c:var(--ma)" data-start="2026-05-07" data-end="2026-05-08">
         <div class="p3-period">7 May — Exam Day</div>
         <div class="p3-action">Mathematics — P1 + P2</div>
         <div class="p3-main">Both papers today. After P2 — rest for the remainder of the day. Full rest day on 8 May.</div>
@@ -1010,7 +1046,7 @@
   <!-- ══════════════════════════════════════════════ -->
   <!-- PAGE 6B: PHASE THREE CONTINUED -->
   <!-- ══════════════════════════════════════════════ -->
-  <div class="page-6b">
+  <div class="page-6b" data-start="2026-05-09" data-end="2026-05-21">
   <div class="phase">
     <div class="phase-hdr">
       <div class="phase-n" style="--pc:var(--ph)">3</div>
@@ -1023,7 +1059,7 @@
 
     <div class="p3-grid">
 
-      <div class="p3-card" style="--c:var(--hi)">
+      <div class="p3-card" style="--c:var(--hi)" data-start="2026-05-09" data-end="2026-05-13">
         <div class="p3-period">9 – 13 May · 4 study days</div>
         <div class="p3-action">History — primary prep</div>
         <div class="p3-main">Morning = History past papers and timed essay practice. Sunday 10 May is a rest day.</div>
@@ -1038,7 +1074,7 @@
         </div>
       </div>
 
-      <div class="p3-card milestone" style="--c:var(--hi)">
+      <div class="p3-card milestone" style="--c:var(--hi)" data-start="2026-05-14" data-end="2026-05-14">
         <div class="p3-period">14 May — Exam Day</div>
         <div class="p3-action">History — P1 + P2</div>
         <div class="p3-main">Both papers today. After two exam sittings — rest for the afternoon. No study until tomorrow morning.</div>
@@ -1049,7 +1085,7 @@
         <div class="p3-done-badge">Exam Day</div>
       </div>
 
-      <div class="p3-card" style="--c:var(--cs)">
+      <div class="p3-card" style="--c:var(--cs)" data-start="2026-05-15" data-end="2026-05-19">
         <div class="p3-period">15 – 19 May · 4 study days</div>
         <div class="p3-action">Computing Science — primary prep</div>
         <div class="p3-main">Morning = Computing past papers and timed practice. Sunday 17 May is a rest day.</div>
@@ -1063,7 +1099,7 @@
         </div>
       </div>
 
-      <div class="p3-card milestone" style="--c:var(--cs)">
+      <div class="p3-card milestone" style="--c:var(--cs)" data-start="2026-05-20" data-end="2026-05-20">
         <div class="p3-period">20 May — Exam Day AM</div>
         <div class="p3-action">Computing Science — Paper 1</div>
         <div class="p3-main">Sit the paper. After it finishes at 11:00 — afternoon is Physics only. Calm notes consolidation. Nothing new. Early night.</div>
@@ -1074,7 +1110,7 @@
         <div class="p3-done-badge">Exam Day</div>
       </div>
 
-      <div class="p3-card" style="--c:var(--ph)">
+      <div class="p3-card" style="--c:var(--ph)" data-start="2026-05-21" data-end="2026-05-21">
         <div class="p3-period">21 May — Exam Day</div>
         <div class="p3-action">Physics — P1 + P2. All done.</div>
         <div class="p3-main">Both papers back-to-back. P2 ends at 12:30. Physics has had rolling preparation since 2 May — over two weeks of steady side sessions plus a proper consolidation evening. Go in confident.</div>
@@ -1150,5 +1186,74 @@
 
   </div>
 </div>
+
+<button class="jump-today" onclick="jumpToToday()">
+  Jump to Today
+  <span class="jump-sub" id="jump-label"></span>
+</button>
+
+<script>
+function jumpToToday() {
+  var today = new Date();
+  today.setHours(0,0,0,0);
+
+  // Find the most specific match: p3-cards first, then week rows, then page sections
+  var targets = document.querySelectorAll('[data-start][data-end]');
+  var best = null;
+  var bestSpan = Infinity;
+
+  for (var i = 0; i < targets.length; i++) {
+    var el = targets[i];
+    var start = new Date(el.dataset.start + 'T00:00:00');
+    var end = new Date(el.dataset.end + 'T23:59:59');
+    if (today >= start && today <= end) {
+      var span = end - start;
+      if (span < bestSpan) {
+        bestSpan = span;
+        best = el;
+      }
+    }
+  }
+
+  // If today is before the plan starts, jump to the first section
+  if (!best) {
+    var planStart = new Date('2026-03-23T00:00:00');
+    var planEnd = new Date('2026-05-21T23:59:59');
+    if (today < planStart) {
+      best = document.querySelector('.page-2');
+    } else if (today > planEnd) {
+      best = document.querySelector('.page-6b');
+    }
+  }
+
+  if (best) {
+    // Clear any previous highlights
+    var prev = document.querySelector('.current-highlight');
+    if (prev) prev.classList.remove('current-highlight');
+
+    best.classList.add('current-highlight');
+    best.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+// Set the subtitle on the button showing what week/phase we're in
+(function() {
+  var today = new Date();
+  today.setHours(0,0,0,0);
+  var planStart = new Date('2026-03-23T00:00:00');
+  var planEnd = new Date('2026-05-21T23:59:59');
+  var label = document.getElementById('jump-label');
+
+  if (today < planStart) {
+    var days = Math.ceil((planStart - today) / 86400000);
+    label.textContent = days + ' day' + (days !== 1 ? 's' : '') + ' until start';
+  } else if (today > planEnd) {
+    label.textContent = 'Plan complete!';
+  } else {
+    var weekNum = Math.floor((today - planStart) / 604800000) + 1;
+    label.textContent = 'Week ' + weekNum + ' of 8';
+  }
+})();
+</script>
 </body>
 </html>
