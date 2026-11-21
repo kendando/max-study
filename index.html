@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Higher Exam Study Plan 2026</title>
+<title>Exam Study Plan 2027</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Fraunces:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -13,11 +13,10 @@
     --border: #252538;
     --text: #f0f0ff;
     --text-dim: #a0a0d0;
-    --en: #ff6b9d;
-    --ma: #4a9eff;
+    --pe: #ff8c42;
+    --bm: #6bffb8;
     --hi: #e8c84a;
-    --cs: #6bffb8;
-    --ph: #ff8c42;
+    --ms: #4a9eff;
     --ex: #c084fc;
   }
 
@@ -766,8 +765,8 @@
         today = new Date(params.get('date'));
       }
 
-      const startDate = new Date(2026, 2, 25); // March 25, 2026
-      const endDate = new Date(2026, 4, 20);  // May 20, 2026 (8 weeks later)
+      const startDate = new Date(2027, 2, 22); // March 22, 2027
+      const endDate = new Date(2027, 4, 26);  // May 26, 2027 (last exam)
 
       // Normalize dates to remove time component
       const todayNormalized = new Date(today.getFullYear(), today.getMonth(), today.getDate());
@@ -841,9 +840,9 @@
   <div class="page-1">
   <!-- HEADER -->
   <header class="hdr">
-    <div class="eyebrow">SQA Higher Examinations · 2026</div>
+    <div class="eyebrow">Higher &amp; Advanced Higher Examinations · 2027</div>
     <h1>Study<em>Plan.</em></h1>
-    <p class="sub">8 weeks · 5 subjects. School week, Easter holidays, back for a week, then study leave into exams. Every subject properly covered, English given a full pre-exam runway, Physics woven through the gaps — and exercise built in throughout.</p>
+    <p class="sub">9 weeks · 4 subjects. School week, Easter holidays, back for a week, then study leave into exams. PE first with a full pre-exam runway, Advanced Higher History woven through the gaps, Modern Studies to finish — and exercise built in throughout.</p>
   </header>
 
   <!-- DAILY INSPIRATIONAL QUOTE -->
@@ -859,11 +858,10 @@
 
   <!-- LEGEND -->
   <div class="legend">
-    <div class="leg"><div class="leg-dot" style="background:var(--en)"></div>English</div>
-    <div class="leg"><div class="leg-dot" style="background:var(--ma)"></div>Mathematics</div>
-    <div class="leg"><div class="leg-dot" style="background:var(--hi)"></div>History</div>
-    <div class="leg"><div class="leg-dot" style="background:var(--cs)"></div>Computing Science</div>
-    <div class="leg"><div class="leg-dot" style="background:var(--ph)"></div>Physics</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--pe)"></div>Physical Education (Higher)</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--bm)"></div>Business Management (Higher)</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--hi)"></div>History (Advanced Higher)</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--ms)"></div>Modern Studies (Higher)</div>
     <div class="leg"><div class="leg-dot" style="background:var(--ex)"></div>Exercise</div>
   </div>
 
@@ -871,7 +869,7 @@
   <div class="sec-title">Exam Schedule</div>
   <div class="exam-calendar">
     <div class="exam-calendar-header">
-      <div class="exam-cal-month">May 2026</div>
+      <div class="exam-cal-month">April – May 2027</div>
     </div>
     <div class="exam-calendar-weekdays">
       <div class="exam-cal-weekday">Mon</div>
@@ -883,62 +881,62 @@
       <div class="exam-cal-weekday weekend">Sun</div>
     </div>
     <div class="exam-calendar-grid">
-      <!-- Week 1: 1st is Friday -->
-      <div class="exam-cal-empty"></div>
-      <div class="exam-cal-empty"></div>
-      <div class="exam-cal-empty"></div>
-      <div class="exam-cal-empty"></div>
-      <div class="exam-cal-day exam-day-1" style="--c:var(--en)">
-        <div class="exam-cal-date">1</div>
-        <div class="exam-cal-subject">English</div>
-        <div class="exam-cal-time">P1 & P2</div>
+      <!-- Week of 26 Apr -->
+      <div class="exam-cal-empty">26</div>
+      <div class="exam-cal-empty">27</div>
+      <div class="exam-cal-empty">28</div>
+      <div class="exam-cal-empty">29</div>
+      <div class="exam-cal-day exam-day-30" style="--c:var(--pe)">
+        <div class="exam-cal-date">30</div>
+        <div class="exam-cal-subject">PE</div>
+        <div class="exam-cal-time">13:00</div>
       </div>
+      <div class="exam-cal-empty weekend">1</div>
       <div class="exam-cal-empty weekend">2</div>
-      <div class="exam-cal-empty weekend">3</div>
-
-      <!-- Week 2 -->
+      <!-- Week of 3 May -->
+      <div class="exam-cal-empty">3</div>
       <div class="exam-cal-empty">4</div>
       <div class="exam-cal-empty">5</div>
       <div class="exam-cal-empty">6</div>
-      <div class="exam-cal-day exam-day-7" style="--c:var(--ma)">
-        <div class="exam-cal-date">7</div>
-        <div class="exam-cal-subject">Maths</div>
-        <div class="exam-cal-time">P1 & P2</div>
-      </div>
-      <div class="exam-cal-empty">8</div>
+      <div class="exam-cal-empty">7</div>
+      <div class="exam-cal-empty weekend">8</div>
       <div class="exam-cal-empty weekend">9</div>
-      <div class="exam-cal-empty weekend">10</div>
-
-      <!-- Week 3 -->
+      <!-- Week of 10 May -->
+      <div class="exam-cal-empty">10</div>
       <div class="exam-cal-empty">11</div>
       <div class="exam-cal-empty">12</div>
-      <div class="exam-cal-empty">13</div>
-      <div class="exam-cal-day exam-day-14" style="--c:var(--hi)">
-        <div class="exam-cal-date">14</div>
-        <div class="exam-cal-subject">History</div>
-        <div class="exam-cal-time">P1 & P2</div>
+      <div class="exam-cal-day exam-day-13" style="--c:var(--bm)">
+        <div class="exam-cal-date">13</div>
+        <div class="exam-cal-subject">Business</div>
+        <div class="exam-cal-time">09:00</div>
       </div>
-      <div class="exam-cal-empty">15</div>
+      <div class="exam-cal-empty">14</div>
+      <div class="exam-cal-empty weekend">15</div>
       <div class="exam-cal-empty weekend">16</div>
-      <div class="exam-cal-empty weekend">17</div>
-
-      <!-- Week 4 -->
+      <!-- Week of 17 May -->
+      <div class="exam-cal-empty">17</div>
       <div class="exam-cal-empty">18</div>
-      <div class="exam-cal-empty">19</div>
-      <div class="exam-cal-day exam-day-20" style="--c:var(--cs)">
-        <div class="exam-cal-date">20</div>
-        <div class="exam-cal-subject">Computing</div>
-        <div class="exam-cal-time">P1</div>
+      <div class="exam-cal-day exam-day-19" style="--c:var(--hi)">
+        <div class="exam-cal-date">19</div>
+        <div class="exam-cal-subject">AH History</div>
+        <div class="exam-cal-time">09:00</div>
       </div>
-      <div class="exam-cal-day exam-day-21" style="--c:var(--ph)">
-        <div class="exam-cal-date">21</div>
-        <div class="exam-cal-subject">Physics</div>
-        <div class="exam-cal-time">P1 & P2</div>
-      </div>
-      <div class="exam-cal-empty">22</div>
+      <div class="exam-cal-empty">20</div>
+      <div class="exam-cal-empty">21</div>
+      <div class="exam-cal-empty weekend">22</div>
       <div class="exam-cal-empty weekend">23</div>
-      <div class="exam-cal-empty weekend">24</div>
-
+      <!-- Week of 24 May -->
+      <div class="exam-cal-empty">24</div>
+      <div class="exam-cal-empty">25</div>
+      <div class="exam-cal-day exam-day-26" style="--c:var(--ms)">
+        <div class="exam-cal-date">26</div>
+        <div class="exam-cal-subject">Mod Studies</div>
+        <div class="exam-cal-time">P1 &amp; P2</div>
+      </div>
+      <div class="exam-cal-empty">27</div>
+      <div class="exam-cal-empty">28</div>
+      <div class="exam-cal-empty weekend">29</div>
+      <div class="exam-cal-empty weekend">30</div>
     </div>
   </div>
   </div>
@@ -946,24 +944,24 @@
   <!-- ══════════════════════════════════════════════ -->
   <!-- PAGE 2: PHASE 1 -->
   <!-- ══════════════════════════════════════════════ -->
-  <div class="page-2" data-start="2026-03-23" data-end="2026-04-11">
+  <div class="page-2" data-start="2027-03-22" data-end="2027-04-10">
   <div class="sec-title">Phase One</div>
   <div class="phase">
     <div class="phase-hdr">
-      <div class="phase-n" style="--pc:var(--cs)">1</div>
-      <div class="phase-info" style="--pc:var(--cs)">
+      <div class="phase-n" style="--pc:var(--bm)">1</div>
+      <div class="phase-info" style="--pc:var(--bm)">
         <div class="phase-lbl">Foundation</div>
         <div class="phase-ttl">Content Consolidation</div>
-        <div class="phase-dates">23 March – 11 April 2026 · 3 weeks · All 5 subjects every week</div>
+        <div class="phase-dates">22 March – 10 April 2027 · 3 weeks · All 4 subjects every week</div>
       </div>
     </div>
-    <p class="phase-desc">All 5 subjects every week. Week 1 is a school week — evenings only (2 hrs) + full Saturday. Weeks 2–3 are Easter holidays — full study days (6 hrs). 5km run every evening Mon–Sat. Sunday off entirely.</p>
+    <p class="phase-desc">All 4 subjects every week. Week 1 is a school week — evenings only (2 hrs) + full Saturday. Weeks 2–3 are Easter holidays — full study days (6 hrs). History is Advanced Higher, so it gets the extra slots. 5km run every evening Mon–Sat. Sunday off entirely.</p>
 
     <div class="ex-note">
       <div class="ex-note-lbl">Exercise this phase</div>
       <strong style="color:var(--text)">5km run</strong> — every evening Mon–Sat. Acts as a hard stop to the study day.<br>
       <strong style="color:var(--text)">Stick &amp; ball</strong> — 10 mins during the midday Pomodoro break on holiday days. No planning needed, just grab the stick.<br>
-      <strong style="color:var(--text)">Sunday</strong> — complete rest. No study, no running. A walk is fine if he wants to move.
+      <strong style="color:var(--text)">Sunday</strong> — complete rest. No study, no running. A walk is fine.
     </div>
 
     <table class="wtbl">
@@ -972,42 +970,31 @@
       </thead>
       <tbody>
         <tr>
-          <td class="wlbl" data-start="2026-03-23" data-end="2026-03-28">Wk 1<br>23–28 Mar<br><span style="color:var(--hi);font-size:12px">SCHOOL</span></td>
+          <td class="wlbl" data-start="2027-03-22" data-end="2027-03-27">Wk 1<br>22–27 Mar<br><span style="color:var(--hi);font-size:12px">SCHOOL</span></td>
           <td style="color:var(--text-dim); font-size:11px;">At school Mon–Fri</td>
           <td>
-            <span style="font-size:13px;color:var(--text-dim)">Mon–Fri evenings (2 hrs) — one subject per night:</span><br>
-            <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span>
-            <span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span>
-            <span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span>
-            <span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span>
-            <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span><br>
+            <span style="font-size:13px;color:var(--text-dim)">Mon–Fri evenings (2 hrs) — one subject per night, History twice:</span><br>
+            <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span> <span class="pill" style="background:rgba(107,255,184,0.15);color:var(--bm)">Business</span> <span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ms)">Modern Studies</span> <span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span><br>
             <span style="font-size:13px;color:var(--text-dim)">Saturday — full day:</span><br>
-            <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span>
-            <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span>
+            <span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span>
           </td>
         </tr>
         <tr>
-          <td class="wlbl" data-start="2026-03-30" data-end="2026-04-04">Wk 2<br>30 Mar–4 Apr<br><span style="color:var(--cs);font-size:12px">EASTER</span></td>
+          <td class="wlbl" data-start="2027-03-29" data-end="2027-04-03">Wk 2<br>29 Mar–3 Apr<br><span style="color:var(--bm);font-size:12px">EASTER</span></td>
           <td>
-            <span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span>
-            <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span>
+            <span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span>
           </td>
           <td>
-            <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span>
-            <span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span>
-            <span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span>
+            <span class="pill" style="background:rgba(107,255,184,0.15);color:var(--bm)">Business</span> <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ms)">Modern Studies</span>
           </td>
         </tr>
         <tr>
-          <td class="wlbl" data-start="2026-04-06" data-end="2026-04-11">Wk 3<br>6–11 Apr<br><span style="color:var(--cs);font-size:12px">EASTER</span></td>
+          <td class="wlbl" data-start="2027-04-05" data-end="2027-04-10">Wk 3<br>5–10 Apr<br><span style="color:var(--bm);font-size:12px">EASTER</span></td>
           <td>
-            <span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span>
-            <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span>
+            <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span> <span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span>
           </td>
           <td>
-            <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span>
-            <span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span>
-            <span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span>
+            <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ms)">Modern Studies</span> <span class="pill" style="background:rgba(107,255,184,0.15);color:var(--bm)">Business</span>
           </td>
         </tr>
       </tbody>
@@ -1019,7 +1006,7 @@
   <!-- ══════════════════════════════════════════════ -->
   <!-- PAGE 3: TRANSITION WEEK -->
   <!-- ══════════════════════════════════════════════ -->
-  <div class="page-3" data-start="2026-04-13" data-end="2026-04-17">
+  <div class="page-3" data-start="2027-04-12" data-end="2027-04-16">
   <div class="sec-title">Back at School</div>
   <div class="phase">
     <div class="phase-hdr">
@@ -1027,15 +1014,15 @@
       <div class="phase-info" style="--pc:var(--hi)">
         <div class="phase-lbl">Transition</div>
         <div class="phase-ttl">Maintenance Week</div>
-        <div class="phase-dates">13 – 17 April 2026 · Back at school · Evenings only · Study leave starts the following week</div>
+        <div class="phase-dates">12 – 16 April 2027 · Back at school · Evenings only · Study leave starts the following week</div>
       </div>
     </div>
-    <p class="phase-desc">Back in school for a week before study leave. No full-day study possible — evenings only (2 hrs). Keep all 5 subjects ticking with notes review and light revision. Saturday 18 April is the first full simulation day. This week is also a natural buffer — if anything slipped during Easter, catch up here.</p>
+    <p class="phase-desc">Back in school for a week before study leave. No full-day study possible — evenings only (2 hrs). Keep all 4 subjects ticking with notes review and light revision. Saturday 17 April is the first full simulation day. This week is also a natural buffer — if anything slipped during Easter, catch up here.</p>
 
     <div class="ex-note">
       <div class="ex-note-lbl">Exercise this week</div>
       <strong style="color:var(--text)">5km run</strong> — every evening after study as normal.<br>
-      <strong style="color:var(--text)">Sunday 12 Apr</strong> — full rest day, no study, no running.
+      <strong style="color:var(--text)">Sunday 11 Apr</strong> — full rest day, no study, no running.
     </div>
 
     <table class="wtbl">
@@ -1044,24 +1031,24 @@
       </thead>
       <tbody>
         <tr>
-          <td class="wlbl" data-start="2026-04-13" data-end="2026-04-17">Mon 13 Apr</td>
-          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Notes review + light revision</td>
+          <td class="wlbl" data-start="2027-04-12" data-end="2027-04-16">Mon 12 Apr</td>
+          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span> Notes review + light revision</td>
         </tr>
         <tr>
-          <td class="wlbl">Tue 14 Apr</td>
-          <td><span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span> Notes review + light revision</td>
+          <td class="wlbl">Tue 13 Apr</td>
+          <td><span class="pill" style="background:rgba(107,255,184,0.15);color:var(--bm)">Business</span> Notes review + light revision</td>
         </tr>
         <tr>
-          <td class="wlbl">Wed 15 Apr</td>
+          <td class="wlbl">Wed 14 Apr</td>
           <td><span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> Notes review + light revision</td>
         </tr>
         <tr>
-          <td class="wlbl">Thu 16 Apr</td>
-          <td><span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span> Notes review + light revision</td>
+          <td class="wlbl">Thu 15 Apr</td>
+          <td><span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ms)">Modern Studies</span> Notes review + light revision</td>
         </tr>
         <tr>
-          <td class="wlbl">Fri 17 Apr</td>
-          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span> Notes review + light revision</td>
+          <td class="wlbl">Fri 16 Apr</td>
+          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span> Get everything ready for tomorrow's timed paper</td>
         </tr>
       </tbody>
     </table>
@@ -1070,26 +1057,26 @@
   </div>
 
   <!-- ══════════════════════════════════════════════ -->
-  <!-- PAGE 4: PHASE 2 + PHASE 2B -->
+  <!-- PAGE 4: PHASE 2 -->
   <!-- ══════════════════════════════════════════════ -->
-  <div class="page-4" data-start="2026-04-18" data-end="2026-04-24">
+  <div class="page-4" data-start="2027-04-17" data-end="2027-04-23">
   <div class="sec-title">Phase Two</div>
   <div class="phase">
     <div class="phase-hdr">
-      <div class="phase-n" style="--pc:var(--ma)">2</div>
-      <div class="phase-info" style="--pc:var(--ma)">
+      <div class="phase-n" style="--pc:var(--ms)">2</div>
+      <div class="phase-info" style="--pc:var(--ms)">
         <div class="phase-lbl">Past Papers</div>
         <div class="phase-ttl">Full Exam Simulation</div>
-        <div class="phase-dates">18 – 24 April 2026 · Study leave begins · All 5 subjects simulated by 24 April</div>
+        <div class="phase-dates">17 – 23 April 2027 · Study leave begins · All 4 subjects simulated by 21 April</div>
       </div>
     </div>
-    <p class="phase-desc">Study leave starts. Every subject gets its own timed simulation block, completed by 24 April to leave a clear runway for English before 1 May. Morning = full past paper under exam conditions. Afternoon = mark fully, correct every wrong answer, update notes.</p>
+    <p class="phase-desc">Study leave starts. Every subject gets its own timed simulation block, completed by 21 April to leave a clear runway for PE before 30 April. Morning = full past paper under exam conditions. Afternoon = mark fully, correct every wrong answer, update notes.</p>
 
     <div class="ex-note">
       <div class="ex-note-lbl">Exercise this phase</div>
       <strong style="color:var(--text)">5km run</strong> — every evening as normal. Especially important during intensive past paper days — it offloads stress and consolidates memory during sleep.<br>
       <strong style="color:var(--text)">Stick &amp; ball</strong> — midday break as usual. Keeps it consistent, no disruption to the study rhythm.<br>
-      <strong style="color:var(--text)">Sunday 19 Apr</strong> — full rest day, no study, no running.
+      <strong style="color:var(--text)">Sunday 18 Apr</strong> — full rest day, no study, no running.
     </div>
 
     <table class="wtbl">
@@ -1098,34 +1085,34 @@
       </thead>
       <tbody>
         <tr>
-          <td class="wlbl" data-start="2026-04-18" data-end="2026-04-24">18 Apr · Sat</td>
-          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> P1 + P2 timed back-to-back</td>
-          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Mark both papers fully</td>
+          <td class="wlbl" data-start="2027-04-17" data-end="2027-04-23">17 Apr · Sat</td>
+          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span> Full paper timed (2 hrs 30)</td>
+          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span> Mark against marking instructions</td>
         </tr>
         <tr>
-          <td class="wlbl">20 Apr · Mon</td>
-          <td><span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span> P1 (non-calc) + P2 timed</td>
-          <td><span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span> Mark and correct every wrong answer</td>
+          <td class="wlbl">19 Apr · Mon</td>
+          <td><span class="pill" style="background:rgba(107,255,184,0.15);color:var(--bm)">Business</span> Full paper timed (2 hrs 15)</td>
+          <td><span class="pill" style="background:rgba(107,255,184,0.15);color:var(--bm)">Business</span> Mark and correct every wrong answer</td>
         </tr>
         <tr>
-          <td class="wlbl">21 Apr · Tue</td>
-          <td><span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> Full timed past paper</td>
-          <td><span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> Mark against marking scheme</td>
+          <td class="wlbl">20 Apr · Tue</td>
+          <td><span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> Full paper timed (3 hrs)</td>
+          <td><span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> Mark essays and source answers against marking scheme</td>
         </tr>
         <tr>
-          <td class="wlbl">22 Apr · Wed</td>
-          <td><span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span> Full timed past paper</td>
-          <td><span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span> Mark section by section</td>
+          <td class="wlbl">21 Apr · Wed</td>
+          <td><span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ms)">Modern Studies</span> P1 + P2 timed back-to-back</td>
+          <td><span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ms)">Modern Studies</span> Mark both papers fully</td>
         </tr>
         <tr>
-          <td class="wlbl">23 Apr · Thu</td>
-          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span> P1 + P2 timed</td>
-          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span> Mark all working, not just final answers</td>
+          <td class="wlbl">22 Apr · Thu</td>
+          <td><span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> Second timed set — one essay + source questions</td>
+          <td><span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> Mark, then rebuild the weakest essay plan</td>
         </tr>
         <tr style="background:var(--surface)">
-          <td class="wlbl">24 Apr · Fri</td>
+          <td class="wlbl">23 Apr · Fri</td>
           <td colspan="2" style="font-size:11px; color:var(--text-dim);">
-            Targeted weak areas only — no full papers. Focus on the gaps the simulations exposed. If nothing major came up, start the English runway a day early.
+            Targeted weak areas only — no full papers. Focus on the gaps the simulations exposed. If nothing major came up, start the PE runway a day early.
           </td>
         </tr>
       </tbody>
@@ -1137,24 +1124,24 @@
   <!-- ══════════════════════════════════════════════ -->
   <!-- PAGE 5: PHASE 2B -->
   <!-- ══════════════════════════════════════════════ -->
-  <div class="page-5" data-start="2026-04-25" data-end="2026-04-30">
+  <div class="page-5" data-start="2027-04-24" data-end="2027-04-29">
   <div class="sec-title">Phase Two B</div>
   <div class="phase">
     <div class="phase-hdr">
-      <div class="phase-n" style="--pc:var(--en)">2b</div>
-      <div class="phase-info" style="--pc:var(--en)">
+      <div class="phase-n" style="--pc:var(--pe)">2b</div>
+      <div class="phase-info" style="--pc:var(--pe)">
         <div class="phase-lbl">Pre-Exam Prep</div>
-        <div class="phase-ttl">English Final Runway</div>
-        <div class="phase-dates">25 April – 30 April 2026 · Study leave · English leads · Maths maintained alongside</div>
+        <div class="phase-ttl">PE Final Runway</div>
+        <div class="phase-dates">24 April – 29 April 2027 · Study leave · PE leads · History maintained alongside</div>
       </div>
     </div>
-    <p class="phase-desc">A dedicated 6-day block before the first exam on 1 May. English is the primary focus. Maths gets light daily maintenance so nothing goes cold before 7 May. No new material for any other subject — notes review only.</p>
+    <p class="phase-desc">A dedicated 6-day block before the first exam on 30 April. PE is the primary focus. History gets light maintenance so the biggest paper never goes cold. No new material for Business or Modern Studies — notes review only.</p>
 
     <div class="ex-note">
       <div class="ex-note-lbl">Exercise this phase</div>
-      <strong style="color:var(--text)">5km run</strong> — every evening including 30 April (night before English). A familiar routine is settling, not risky. Keep the volume exactly the same.<br>
+      <strong style="color:var(--text)">5km run</strong> — every evening including 29 April (night before PE). A familiar routine is settling, not risky. Keep the volume exactly the same.<br>
       <strong style="color:var(--text)">Stick &amp; ball</strong> — midday break as usual, every day.<br>
-      <strong style="color:var(--text)">Sunday 26 Apr</strong> — full rest day. Last proper day off before the exam run begins.
+      <strong style="color:var(--text)">Sunday 25 Apr</strong> — full rest day. Last proper day off before the exam run begins.
     </div>
 
     <table class="wtbl">
@@ -1163,33 +1150,33 @@
       </thead>
       <tbody>
         <tr>
-          <td class="wlbl">25 Apr · Sat</td>
-          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span></td>
-          <td><span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span> Light review</td>
+          <td class="wlbl">24 Apr · Sat</td>
+          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span></td>
+          <td><span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> Light review</td>
         </tr>
         <tr>
-          <td class="wlbl">26 Apr · Sun</td>
+          <td class="wlbl">25 Apr · Sun</td>
           <td colspan="2" style="color:var(--text-dim); font-style:italic; font-size:11px;">Full rest day — no study, no running. Last proper day off.</td>
         </tr>
         <tr>
-          <td class="wlbl">27 Apr · Mon</td>
-          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span></td>
-          <td><span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ma)">Maths</span> Light review</td>
+          <td class="wlbl">26 Apr · Mon</td>
+          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span></td>
+          <td><span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> Light review</td>
         </tr>
         <tr>
-          <td class="wlbl">28 Apr · Tue</td>
-          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Full timed past paper</td>
-          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Mark the morning paper fully</td>
+          <td class="wlbl">27 Apr · Tue</td>
+          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span> Full timed past paper</td>
+          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span> Mark the morning paper fully</td>
         </tr>
         <tr>
-          <td class="wlbl">29 Apr · Wed</td>
-          <td><span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Weak areas only</td>
+          <td class="wlbl">28 Apr · Wed</td>
+          <td><span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span> Weak areas only</td>
           <td>All subjects — notes review only. No new material.</td>
         </tr>
         <tr>
-          <td class="wlbl">30 Apr · Thu</td>
+          <td class="wlbl">29 Apr · Thu</td>
           <td colspan="2" style="font-size:11px; color:var(--text-dim);">
-            <span class="pill" style="background:rgba(255,107,157,0.15);color:var(--en)">English</span> Light notes review only. No timed work. <span style="color:var(--ex)">5km run this evening as normal.</span> Early night. Exam tomorrow at 09:00.
+            <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--pe)">PE</span> Light notes review only. No timed work. <span style="color:var(--ex)">5km run this evening as normal.</span> Early night. Exam tomorrow at 13:00.
           </td>
         </tr>
       </tbody>
@@ -1201,17 +1188,17 @@
   <!-- ══════════════════════════════════════════════ -->
   <!-- PAGE 6: PHASE 3 -->
   <!-- ══════════════════════════════════════════════ -->
-  <div class="page-6" data-start="2026-05-01" data-end="2026-05-08">
+  <div class="page-6" data-start="2027-04-30" data-end="2027-05-13">
   <div class="phase">
     <div class="phase-hdr">
-      <div class="phase-n" style="--pc:var(--ph)">3</div>
-      <div class="phase-info" style="--pc:var(--ph)">
+      <div class="phase-n" style="--pc:var(--hi)">3</div>
+      <div class="phase-info" style="--pc:var(--hi)">
         <div class="phase-lbl">Exam Period</div>
         <div class="phase-ttl">Rolling Preparation</div>
-        <div class="phase-dates">1 May – 21 May 2026 · Study leave · Physics woven throughout · Sundays still off</div>
+        <div class="phase-dates">30 April – 26 May 2027 · Study leave · History woven throughout · Sundays still off</div>
       </div>
     </div>
-    <p class="phase-desc">Each primary subject gets a dedicated morning prep block before its sitting. Physics is woven into every afternoon from 2 May, building over two weeks of side-session preparation rather than one panicked evening. Sundays remain rest days throughout — the routine that got him here is the routine that carries him through.</p>
+    <p class="phase-desc">Each subject gets a dedicated morning prep block before its sitting. History is woven into every afternoon from 1 May, building over two weeks of side-session preparation rather than one panicked stretch after Business. Sundays remain rest days throughout — the routine that works in April is the routine that carries through May.</p>
 
     <div class="ex-note">
       <div class="ex-note-lbl">Exercise this phase</div>
@@ -1219,15 +1206,15 @@
       <strong style="color:var(--text)">Exam day evenings</strong> — drop to a <strong style="color:var(--text)">3km easy jog</strong>. Keep the habit, reduce the load.<br>
       <strong style="color:var(--text)">Stick &amp; ball</strong> — midday break daily. Keep it going right through to the last exam.<br>
       <strong style="color:var(--text)">Sundays</strong> — full rest as always. No study, no running.<br>
-      <strong style="color:var(--text)">After 21 May</strong> — back to full training. Well earned.
+      <strong style="color:var(--text)">After 26 May</strong> — back to full training. Well earned.
     </div>
 
     <div class="p3-grid">
 
-      <div class="p3-card" style="--c:var(--en)" data-start="2026-05-01" data-end="2026-05-01">
-        <div class="p3-period">1 May — Exam Day</div>
-        <div class="p3-action">English — P1 + P2</div>
-        <div class="p3-main">Both papers today. After P2 finishes at 12:45 — complete rest from study. No looking at Maths notes.</div>
+      <div class="p3-card" style="--c:var(--pe)" data-start="2027-04-30" data-end="2027-04-30">
+        <div class="p3-period">30 April — Exam Day PM</div>
+        <div class="p3-action">Physical Education — 13:00 – 15:30</div>
+        <div class="p3-main">Afternoon sitting. Morning = a calm read through notes, nothing timed, proper lunch. After the paper finishes at 15:30 — complete rest from study. No looking at Business notes.</div>
         <div class="p3-ex">
           <div class="p3-ex-lbl">↳ Exercise</div>
           3km easy jog this evening. Calm, familiar, settling.
@@ -1235,34 +1222,35 @@
         <div class="p3-done-badge">Exam Day</div>
       </div>
 
-      <div class="p3-card" style="--c:var(--ma)" data-start="2026-05-02" data-end="2026-05-06">
-        <div class="p3-period">2 – 6 May · 4 study days</div>
-        <div class="p3-action">Mathematics — primary prep</div>
-        <div class="p3-main">Morning = Maths past papers under exam conditions. Sunday 3 May is a rest day.</div>
+      <div class="p3-card" style="--c:var(--bm)" data-start="2027-05-01" data-end="2027-05-11">
+        <div class="p3-period">1 – 11 May · 9 study days</div>
+        <div class="p3-action">Business Management — primary prep</div>
+        <div class="p3-main">Morning = Business past papers under exam conditions, case study section first. Sundays 2 and 9 May are rest days.</div>
         <div class="p3-side">
           <div class="p3-side-lbl">↳ Afternoon side sessions</div>
-          <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span> Side session daily — rotating topics.
+          <span class="pill" style="background:rgba(232,200,74,0.15);color:var(--hi)">History</span> Side session daily — one timed essay or source question, rotating topics.<br>
+          <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ms)">Modern Studies</span> Light notes refresh — 30 mins twice a week, keep it ticking.
         </div>
         <div class="p3-ex">
           <div class="p3-ex-lbl">↳ Exercise</div>
-          5km run every evening. Stick &amp; ball in midday break. Sunday 3 May — full rest.
+          5km run every evening. Stick &amp; ball in midday break. Sundays — full rest.
         </div>
       </div>
 
-      <div class="p3-card rest-day" data-start="2026-05-06" data-end="2026-05-06">
-        <div class="p3-period" style="color:var(--text-dim)">6 May — Night before Maths</div>
+      <div class="p3-card rest-day" data-start="2027-05-12" data-end="2027-05-12">
+        <div class="p3-period" style="color:var(--text-dim)">12 May — Night before Business</div>
         <div class="p3-action" style="font-weight:400; color:var(--text-dim)">Light notes review only</div>
-        <div class="p3-main" style="color:var(--text-dim)">No timed work. Same routine as the night before English — light review, 5km run, early night. P1 is non-calculator, so a clear head matters more than extra drilling.</div>
+        <div class="p3-main" style="color:var(--text-dim)">No timed work. Same routine as the night before PE — light review, 5km run, early night. A clear head for the case study matters more than extra drilling.</div>
         <div class="rest-badge">Exam Eve</div>
       </div>
 
-      <div class="p3-card milestone" style="--c:var(--ma)" data-start="2026-05-07" data-end="2026-05-08">
-        <div class="p3-period">7 May — Exam Day</div>
-        <div class="p3-action">Mathematics — P1 + P2</div>
-        <div class="p3-main">Both papers today. After P2 — rest for the remainder of the day. Full rest day on 8 May.</div>
+      <div class="p3-card milestone" style="--c:var(--bm)" data-start="2027-05-13" data-end="2027-05-13">
+        <div class="p3-period">13 May — Exam Day AM</div>
+        <div class="p3-action">Business Management — 09:00 – 11:15</div>
+        <div class="p3-main">Sit the paper. After it finishes at 11:15 — rest for the remainder of the day. History prep starts fresh tomorrow morning.</div>
         <div class="p3-ex">
           <div class="p3-ex-lbl">↳ Exercise</div>
-          3km easy jog this evening. 8 May — gentle walk only, full rest.
+          3km easy jog this evening. That's it.
         </div>
         <div class="p3-done-badge">Exam Day</div>
       </div>
@@ -1275,38 +1263,44 @@
   <!-- ══════════════════════════════════════════════ -->
   <!-- PAGE 6B: PHASE THREE CONTINUED -->
   <!-- ══════════════════════════════════════════════ -->
-  <div class="page-6b" data-start="2026-05-09" data-end="2026-05-21">
+  <div class="page-6b" data-start="2027-05-14" data-end="2027-05-26">
   <div class="phase">
     <div class="phase-hdr">
-      <div class="phase-n" style="--pc:var(--ph)">3</div>
-      <div class="phase-info" style="--pc:var(--ph)">
+      <div class="phase-n" style="--pc:var(--hi)">3</div>
+      <div class="phase-info" style="--pc:var(--hi)">
         <div class="phase-lbl">Exam Period — continued</div>
         <div class="phase-ttl">Rolling Preparation</div>
-        <div class="phase-dates">9 May – 21 May 2026 · History → Computing → Physics</div>
+        <div class="phase-dates">14 May – 26 May 2027 · History → Modern Studies</div>
       </div>
     </div>
 
     <div class="p3-grid">
 
-      <div class="p3-card" style="--c:var(--hi)" data-start="2026-05-09" data-end="2026-05-13">
-        <div class="p3-period">9 – 13 May · 4 study days</div>
+      <div class="p3-card" style="--c:var(--hi)" data-start="2027-05-14" data-end="2027-05-17">
+        <div class="p3-period">14 – 17 May · 3 study days</div>
         <div class="p3-action">History — primary prep</div>
-        <div class="p3-main">Morning = History past papers and timed essay practice. Sunday 10 May is a rest day.</div>
+        <div class="p3-main">Morning = History past papers and timed essay practice. History has been building in side sessions for two weeks, so these days are for full-length timing. Sunday 16 May is a rest day.</div>
         <div class="p3-side">
           <div class="p3-side-lbl">↳ Afternoon side sessions</div>
-          <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span> Side session daily.<br>
-          <span class="pill" style="background:rgba(107,255,184,0.15);color:var(--cs)">Computing</span> Light notes refresh — 30 mins, keep it ticking.
+          <span class="pill" style="background:rgba(74,158,255,0.15);color:var(--ms)">Modern Studies</span> Side session daily — essay plans one day, source-based questions the next.
         </div>
         <div class="p3-ex">
           <div class="p3-ex-lbl">↳ Exercise</div>
-          5km run every evening. Sunday 10 May — full rest.
+          5km run every evening. Sunday 16 May — full rest.
         </div>
       </div>
 
-      <div class="p3-card milestone" style="--c:var(--hi)" data-start="2026-05-14" data-end="2026-05-14">
-        <div class="p3-period">14 May — Exam Day</div>
-        <div class="p3-action">History — P1 + P2</div>
-        <div class="p3-main">Both papers today. After two exam sittings — rest for the afternoon. No study until tomorrow morning.</div>
+      <div class="p3-card rest-day" data-start="2027-05-18" data-end="2027-05-18">
+        <div class="p3-period" style="color:var(--text-dim)">18 May — Night before History</div>
+        <div class="p3-action" style="font-weight:400; color:var(--text-dim)">Light notes review only</div>
+        <div class="p3-main" style="color:var(--text-dim)">No timed work. Read through essay plans and key historians once, then stop. 5km run, early night. Three hours of writing tomorrow needs a rested hand and head.</div>
+        <div class="rest-badge">Exam Eve</div>
+      </div>
+
+      <div class="p3-card milestone" style="--c:var(--hi)" data-start="2027-05-19" data-end="2027-05-19">
+        <div class="p3-period">19 May — Exam Day AM</div>
+        <div class="p3-action">Advanced Higher History — 09:00 – 12:00</div>
+        <div class="p3-main">One three-hour paper. The longest sitting of the diet — rest for the afternoon. No study until tomorrow morning.</div>
         <div class="p3-ex">
           <div class="p3-ex-lbl">↳ Exercise</div>
           3km easy jog this evening. That's it.
@@ -1314,38 +1308,30 @@
         <div class="p3-done-badge">Exam Day</div>
       </div>
 
-      <div class="p3-card" style="--c:var(--cs)" data-start="2026-05-15" data-end="2026-05-19">
-        <div class="p3-period">15 – 19 May · 4 study days</div>
-        <div class="p3-action">Computing Science — primary prep</div>
-        <div class="p3-main">Morning = Computing past papers and timed practice. Sunday 17 May is a rest day.</div>
-        <div class="p3-side">
-          <div class="p3-side-lbl">↳ Afternoon side sessions</div>
-          <span class="pill" style="background:rgba(255,140,66,0.15);color:var(--ph)">Physics</span> Past paper sections daily — Physics has been building for over two weeks now.
-        </div>
+      <div class="p3-card" style="--c:var(--ms)" data-start="2027-05-20" data-end="2027-05-24">
+        <div class="p3-period">20 – 24 May · 4 study days</div>
+        <div class="p3-action">Modern Studies — primary prep</div>
+        <div class="p3-main">Morning = Paper 1 essays under timed conditions. Afternoon = Paper 2 source-based questions, then mark both. Only one subject left, so the whole day belongs to it. Sunday 23 May is a rest day.</div>
         <div class="p3-ex">
           <div class="p3-ex-lbl">↳ Exercise</div>
-          5km run every evening. Sunday 17 May — full rest. Crucial phase — the run is non-negotiable for keeping the head clear.
+          5km run every evening. Sunday 23 May — full rest. Final stretch — the run is non-negotiable for keeping the head clear.
         </div>
       </div>
 
-      <div class="p3-card milestone" style="--c:var(--cs)" data-start="2026-05-20" data-end="2026-05-20">
-        <div class="p3-period">20 May — Exam Day AM</div>
-        <div class="p3-action">Computing Science — Paper 1</div>
-        <div class="p3-main">Sit the paper. After it finishes at 11:00 — afternoon is Physics only. Calm notes consolidation. Nothing new. Early night.</div>
-        <div class="p3-ex">
-          <div class="p3-ex-lbl">↳ Exercise</div>
-          5km run this evening — Physics exam is tomorrow, the routine matters most tonight.
-        </div>
-        <div class="p3-done-badge">Exam Day</div>
+      <div class="p3-card rest-day" data-start="2027-05-25" data-end="2027-05-25">
+        <div class="p3-period" style="color:var(--text-dim)">25 May — Night before Modern Studies</div>
+        <div class="p3-action" style="font-weight:400; color:var(--text-dim)">Light notes review only</div>
+        <div class="p3-main" style="color:var(--text-dim)">No timed work. Same routine one last time — light review, 5km run, early night.</div>
+        <div class="rest-badge">Exam Eve</div>
       </div>
 
-      <div class="p3-card" style="--c:var(--ph)" data-start="2026-05-21" data-end="2026-05-21">
-        <div class="p3-period">21 May — Exam Day</div>
-        <div class="p3-action">Physics — P1 + P2. All done.</div>
-        <div class="p3-main">Both papers back-to-back. P2 ends at 12:30. Physics has had rolling preparation since 2 May — over two weeks of steady side sessions plus a proper consolidation evening. Go in confident.</div>
+      <div class="p3-card" style="--c:var(--ms)" data-start="2027-05-26" data-end="2027-05-26">
+        <div class="p3-period">26 May — Exam Day</div>
+        <div class="p3-action">Modern Studies — P1 + P2. All done.</div>
+        <div class="p3-main">Paper 1 at 09:00, Paper 2 at 11:15, finishing at 12:30. Four days of nothing but Modern Studies behind this one. Go in confident.</div>
         <div class="p3-ex">
           <div class="p3-ex-lbl">↳ After 12:30</div>
-          Everything is finished. Get outside. Run as far as he wants.
+          Everything is finished. Get outside. Run as far as the legs want to go.
         </div>
         <div class="p3-done-badge">Exam Day</div>
       </div>
@@ -1410,7 +1396,7 @@
   </div>
 
   <div class="ftr">
-    <p>8 weeks. 5 subjects. One shot. <span>Make it count.</span></p>
+    <p>9 weeks. 4 subjects. One shot. <span>Make it count.</span></p>
   </div>
 
   </div>
@@ -1454,8 +1440,8 @@ function jumpToToday() {
   }
 
   if (!best) {
-    var planStart = new Date('2026-03-23T00:00:00');
-    var planEnd = new Date('2026-05-21T23:59:59');
+    var planStart = new Date('2027-03-22T00:00:00');
+    var planEnd = new Date('2027-05-26T23:59:59');
     if (today < planStart) {
       best = document.querySelector('.page-2');
     } else if (today > planEnd) {
@@ -1474,8 +1460,8 @@ function jumpToToday() {
 // Update button label and auto-scroll if ?date= is set
 (function() {
   var today = getActiveDate();
-  var planStart = new Date('2026-03-23T00:00:00');
-  var planEnd = new Date('2026-05-21T23:59:59');
+  var planStart = new Date('2027-03-22T00:00:00');
+  var planEnd = new Date('2027-05-26T23:59:59');
   var label = document.getElementById('jump-label');
   var params = new URLSearchParams(window.location.search);
 
@@ -1489,7 +1475,7 @@ function jumpToToday() {
     label.textContent = 'Plan complete!';
   } else {
     var weekNum = Math.floor((today - planStart) / 604800000) + 1;
-    label.textContent = 'Week ' + weekNum + ' of 8';
+    label.textContent = 'Week ' + weekNum + ' of 10';
   }
 })();
 </script>
