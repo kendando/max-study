@@ -744,16 +744,23 @@
     const quotes = [
       { text: "The only way to do great work is to love what you do.", author: "Steve Jobs", link: "https://en.wikipedia.org/wiki/Steve_Jobs", grokipedia: "https://grokipedia.com/page/Steve_Jobs" },
       { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill", link: "https://en.wikipedia.org/wiki/Winston_Churchill", grokipedia: "https://grokipedia.com/page/Winston_Churchill" },
+      { text: "It was not Marxism that made Lenin a revolutionary but Lenin who made Marxism revolutionary.", author: "Orlando Figes", work: "A People's Tragedy", link: "https://en.wikipedia.org/wiki/Orlando_Figes", grokipedia: null },
       { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt", link: "https://en.wikipedia.org/wiki/Theodore_Roosevelt", grokipedia: "https://grokipedia.com/page/Theodore_Roosevelt" },
       { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt", link: "https://en.wikipedia.org/wiki/Eleanor_Roosevelt", grokipedia: "https://grokipedia.com/page/Eleanor_Roosevelt" },
+      { text: "Once a rumour, however false, became the subject of common belief, it assumed the status of a political fact, informing the attitudes and actions of the public. All revolutions are based in part on myth.", author: "Orlando Figes", work: "Revolutionary Russia, 1891–1991", link: "https://en.wikipedia.org/wiki/Orlando_Figes", grokipedia: null },
       { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius", link: "https://en.wikipedia.org/wiki/Confucius", grokipedia: "https://grokipedia.com/page/Confucius" },
       { text: "Everything you want is on the other side of fear.", author: "Jack Canfield", link: "https://en.wikipedia.org/wiki/Jack_Canfield", grokipedia: "https://grokipedia.com/page/Jack_Canfield" },
+      { text: "For the Romanov regime fell under the weight of its own internal contradictions. It was not overthrown.", author: "Orlando Figes", work: "A People's Tragedy", link: "https://en.wikipedia.org/wiki/Orlando_Figes", grokipedia: null },
       { text: "Believe in yourself. You are braver than you think, more talented than you know, and capable of more than you imagine.", author: "Roy Bennett", link: "https://www.roybrennettauthor.com", grokipedia: null },
       { text: "I learned that courage was not the absence of fear, but the triumph over it.", author: "Nelson Mandela", link: "https://en.wikipedia.org/wiki/Nelson_Mandela", grokipedia: "https://grokipedia.com/page/Nelson_Mandela" },
+      { text: "Whereas land reform was the first act of the Bolsheviks, it was the last act of the Whites: that, in a peasant country, says it all.", author: "Orlando Figes", work: "A People's Tragedy", link: "https://en.wikipedia.org/wiki/Orlando_Figes", grokipedia: null },
       { text: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela", link: "https://en.wikipedia.org/wiki/Nelson_Mandela", grokipedia: "https://grokipedia.com/page/Nelson_Mandela" },
       { text: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky", link: "https://en.wikipedia.org/wiki/Wayne_Gretzky", grokipedia: "https://grokipedia.com/page/Wayne_Gretzky" },
+      { text: "Petersburg did not grow up like other towns. Neither commerce nor geopolitics can account for its development. Rather it was built as a work of art.", author: "Orlando Figes", work: "Natasha's Dance", link: "https://en.wikipedia.org/wiki/Orlando_Figes", grokipedia: null },
       { text: "Excellence is not a destination; it is a continuous journey that never ends.", author: "Brian Tracy", link: "https://en.wikipedia.org/wiki/Brian_Tracy", grokipedia: "https://grokipedia.com/page/Brian_Tracy" },
-      { text: "Success is walking from failure to failure with no loss of enthusiasm.", author: "Winston Churchill", link: "https://en.wikipedia.org/wiki/Winston_Churchill", grokipedia: "https://grokipedia.com/page/Winston_Churchill" }
+      { text: "Success is walking from failure to failure with no loss of enthusiasm.", author: "Winston Churchill", link: "https://en.wikipedia.org/wiki/Winston_Churchill", grokipedia: "https://grokipedia.com/page/Winston_Churchill" },
+      { text: "The remarkable thing about the Bolshevik insurrection is that hardly any of the Bolshevik leaders had wanted it to happen until a few hours before it began.", author: "Orlando Figes", work: "A People's Tragedy", link: "https://en.wikipedia.org/wiki/Orlando_Figes", grokipedia: null },
+      { text: "Everybody cursed the Bolsheviks but nobody was prepared to do anything about them.", author: "Orlando Figes", work: "A People's Tragedy", link: "https://en.wikipedia.org/wiki/Orlando_Figes", grokipedia: null }
     ];
 
     function getQuoteForDay() {
@@ -804,7 +811,7 @@
 
       document.getElementById('quoteText').textContent = '"' + quote.text + '"';
       document.getElementById('quoteLabel').textContent = 'Daily Inspiration — ' + quote.author;
-      let authorHtml = quote.author + ' (<a href="' + quote.link + '" target="_blank" rel="noopener noreferrer">Wikipedia</a>';
+      let authorHtml = quote.author + (quote.work ? ', <em>' + quote.work + '</em>' : '') + ' (<a href="' + quote.link + '" target="_blank" rel="noopener noreferrer">Wikipedia</a>';
       if (quote.grokipedia) {
         authorHtml += ' · <a href="' + quote.grokipedia + '" target="_blank" rel="noopener noreferrer">Grokipedia</a>';
       }
